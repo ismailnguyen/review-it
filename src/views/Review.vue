@@ -4,7 +4,7 @@
 	
 		<div v-else>
 			<h1 v-if="!isNotFound">{{ store.name }}</h1>
-			<h2 v-if="!isNotFound">Leave us a review</h2>
+			<h3 v-if="!isNotFound">{{ store.description }}</h3>
 			
 			<TripadvisorReviewButton v-if="!isNotFound" />
 			<GoogleReviewButton v-if="!isNotFound" />
@@ -38,18 +38,18 @@ export default {
 		store: {
 			name: '',
 			tripadvisorLink: '',
-			googlereviewLink: ''
+			googlereviewLink: '',
+			description: ''
 		},
 		isNotFound: false,
 		isLoading: true
 	}
   },
   mounted () {
-  
 	axios({
-		url: 'https://api.airtable.com/v0/appHBWph3s8a5JrnO/Stores',
+		url: `https://api.airtable.com/v0/${ process.env.VUE_APP_AIRTABLE_BASE }/Stores`,
 		headers: {
-			'Authorization': `Bearer keyW1f6PGoANlJXXk`
+			'Authorization': `Bearer ${ process.env.VUE_APP_AIRTABLE_TOKEN }`
 		},
 		params: {
 			filterByFormula: `AND(({uid} = "${this.id}"), ({status} = "Active"))`
@@ -59,6 +59,7 @@ export default {
 			this.store.name = records[0].fields['Name'];
 			this.store.tripadvisorLink = records[0].fields['Tripadvisor'];
 			this.store.googlereviewLink = records[0].fields['Google review'];
+			this.store.description = records[0].fields['Description'];
 		} else {
 			this.isNotFound = true;
 		}
