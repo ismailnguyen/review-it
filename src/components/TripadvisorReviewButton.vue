@@ -6,7 +6,7 @@
 	export default {
 		data () {
 			return {
-				tripadvisorLink: 'https://www.tripadvisor.fr/UserReview-g226862-d16649258-Namaste-Rosny_sous_Bois_Seine_Saint_Denis_Ile_de_France.html',
+				tripadvisorLink: '',
 			}
 		}
 	}

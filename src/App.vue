@@ -1,24 +1,69 @@
 <template>
   <div id="app">
-    <h1>Leave us a review</h1>
+	<Loader v-if="isLoading" />
 	
-	<TripadvisorReviewButton />
-	<GoogleReviewButton />
-	
-	<Footer />
+	<div v-else>
+		<h1 v-if="!isNotFound">{{ store.name }}</h1>
+		<h2 v-if="!isNotFound">Leave us a review</h2>
+		
+		<TripadvisorReviewButton v-if="!isNotFound" />
+		<GoogleReviewButton v-if="!isNotFound" />
+		
+		<NotFound v-if="isNotFound" />
+		
+		<Footer />
+	</div>
   </div>
 </template>
 
 <script>
+import Loader from './components/Loader.vue'
 import GoogleReviewButton from './components/GoogleReviewButton.vue'
 import TripadvisorReviewButton from './components/TripadvisorReviewButton.vue'
+import NotFound from './components/NotFound.vue'
 import Footer from './components/Footer.vue'
+import axios from 'axios'
 
 export default {
   components: {
+	Loader,
 	GoogleReviewButton,
 	TripadvisorReviewButton,
+	NotFound,
 	Footer
+  },
+  data () {
+	return  {
+		store: {
+			name: '',
+			tripadvisorLink: '',
+			googlereviewLink: ''
+		},
+		isNotFound: false,
+		isLoading: true
+	}
+  },
+  mounted () {
+  
+	axios({
+		url: 'https://api.airtable.com/v0/appHBWph3s8a5JrnO/Stores',
+		headers: {
+			'Authorization': `Bearer keyW1f6PGoANlJXXk`
+		},
+		params: {
+			filterByFormula: 'AND(({uid} = "1"), ({status} = "Active"))'
+		}
+	}).then(({data: {records}}) => {
+		if (records.length > 0) {
+			this.store.name = records[0].fields['Name'];
+			this.store.tripadvisorLink = records[0].fields['Tripadvisor'];
+			this.store.googlereviewLink = records[0].fields['Google review'];
+		} else {
+			this.isNotFound = true;
+		}
+		
+		this.isLoading = false;
+	});
   }
 }
 </script>
@@ -63,7 +108,6 @@ body {
 	-o-animation: wiggle 2s ease-in infinite;
 	animation: wiggle 2s ease-in infinite;
 }
-
 
 @-webkit-keyframes wiggle {
 	0%, 20%, 100% { background-position: left 20px center; }
