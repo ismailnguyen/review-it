@@ -4,10 +4,11 @@
 	
 		<div v-else>
 			<h1 v-if="!isNotFound">{{ store.name }}</h1>
-			<h3 v-if="!isNotFound">{{ store.description }}</h3>
+			<h3 v-if="!isNotFound && store.description">{{ store.description }}</h3>
 			
-			<TripadvisorReviewButton :link="store.tripadvisorLink" v-if="!isNotFound" />
-			<GoogleReviewButton :link="store.googlereviewLink" v-if="!isNotFound" />
+			<TripadvisorReviewButton :link="store.tripadvisorLink" v-if="!isNotFound && store.tripadvisorLink" />
+			<GoogleReviewButton :link="store.googlereviewLink" v-if="!isNotFound && store.googlereviewLink" />
+			<CustomButton :link="store.customLink" :text="store.customText" v-if="!isNotFound && store.customLink && store.customText" />
 			
 			<NotFound v-if="isNotFound" />
 			
@@ -20,6 +21,7 @@
 import Loader from '../components/Loader.vue'
 import GoogleReviewButton from '../components/GoogleReviewButton.vue'
 import TripadvisorReviewButton from '../components/TripadvisorReviewButton.vue'
+import CustomButton from '../components/CustomButton.vue'
 import NotFound from '../components/NotFound.vue'
 import Footer from '../components/Footer.vue'
 import axios from 'axios'
@@ -30,6 +32,7 @@ export default {
 	Loader,
 	GoogleReviewButton,
 	TripadvisorReviewButton,
+	CustomButton,
 	NotFound,
 	Footer
   },
@@ -60,6 +63,8 @@ export default {
 			this.store.tripadvisorLink = records[0].fields['Tripadvisor'];
 			this.store.googlereviewLink = records[0].fields['Google review'];
 			this.store.description = records[0].fields['Description'];
+			this.store.customLink = records[0].fields['Custom Link'];
+			this.store.customText = records[0].fields['Custom Text'];
 		} else {
 			this.isNotFound = true;
 		}
@@ -77,7 +82,6 @@ export default {
 	width: 70%;
 	max-width: 270px;
 	padding: 15px 15px 15px 50px;
-	border: 2px solid #01dc9c;
 	border-radius: 50px;
 	text-transform: uppercase;
 	text-decoration: none;

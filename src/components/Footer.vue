@@ -1,6 +1,6 @@
 <template>
   <footer>
-	&copy; {{ thisYear }} - Trip.it
+	&copy; {{ thisYear }} - Review.it
   </footer>
 </template>
 

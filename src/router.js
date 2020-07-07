@@ -4,7 +4,7 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 import Home from './views/Home.vue'
-import Review from './views/Review.vue'
+import ButtonsPanel from './views/ButtonsPanel.vue'
 
 const router = new VueRouter({
     mode: 'history',
@@ -15,15 +15,15 @@ const router = new VueRouter({
             component: Home
         },
         {
-            name: 'ReviewPage',
+            name: 'ButtonsPanel',
             path: '/r/:id',
-            component: Review,
+            component: ButtonsPanel,
             props: (route) => ({ id: route.params.id })
         },
 		{
-            name: 'NamedReviewPage',
+            name: 'NamedButtonsPanel',
             path: '/r/:id/:name',
-            component: Review,
+            component: ButtonsPanel,
             props: (route) => ({ id: route.params.id })
         }
     ]

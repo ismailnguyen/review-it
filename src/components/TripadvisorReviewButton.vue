@@ -11,7 +11,8 @@
 <style scoped>
 .tripadvisor-brand {
 	color: #01dc9c;
-	background: url(https://seeklogo.com/images/T/tripadvisor-logo-BDB616E7F6-seeklogo.com.png) no-repeat left 20px center / 40px 40px;
+	border: 2px solid #01dc9c;
+	background: url(../assets/tripadvisor-logo.png) no-repeat left 20px center / 40px 40px;
 }
 
 .tripadvisor-brand:hover {
