@@ -1,14 +1,10 @@
 <template>
-	<a class="google-brand review-button" :href="googlereviewLink" target="_blank">Google review</a>
+	<a class="google-brand review-button" :href="link" target="_blank">Google review</a>
 </template>
 
 <script>
 	export default {
-		data () {
-			return {
-				googlereviewLink: ''
-			}
-		}
+		props: ['link']
 	}
 </script>
 

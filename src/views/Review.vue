@@ -6,8 +6,8 @@
 			<h1 v-if="!isNotFound">{{ store.name }}</h1>
 			<h3 v-if="!isNotFound">{{ store.description }}</h3>
 			
-			<TripadvisorReviewButton v-if="!isNotFound" />
-			<GoogleReviewButton v-if="!isNotFound" />
+			<TripadvisorReviewButton :link="store.tripadvisorLink" v-if="!isNotFound" />
+			<GoogleReviewButton :link="store.googlereviewLink" v-if="!isNotFound" />
 			
 			<NotFound v-if="isNotFound" />
 			

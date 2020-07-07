@@ -1,14 +1,10 @@
 <template>
-	<a class="tripadvisor-brand review-button" :href="tripadvisorLink" target="_blank">Tripadvisor</a>
+	<a class="tripadvisor-brand review-button" :href="link" target="_blank">Tripadvisor</a>
 </template>
 
 <script>
 	export default {
-		data () {
-			return {
-				tripadvisorLink: '',
-			}
-		}
+		props: ['link']
 	}
 </script>
 
