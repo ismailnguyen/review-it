@@ -36,5 +36,5 @@ http://goqr.me/#t=url
 
 ### Demo
 
-- [bit.ly/namaste-rouen](bit.ly/namaste-rouen)
-- [bit.ly/namaste-rosny2](bit.ly/namaste-rosny2)
+- [bit.ly/namaste-rouen](https://bit.ly/namaste-rouen)
+- [bit.ly/namaste-rosny2](https://bit.ly/namaste-rosny2)
