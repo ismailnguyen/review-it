@@ -31,3 +31,10 @@ http://goqr.me/#t=url
 ### Update datas
 
 - Airtable > Base `Trip.it` > Table `Stores`
+
+
+
+### Demo
+
+- [bit.ly/namaste-rouen](bit.ly/namaste-rouen)
+- [bit.ly/namaste-rosny2](bit.ly/namaste-rosny2)
