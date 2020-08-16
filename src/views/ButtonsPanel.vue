@@ -3,7 +3,8 @@
 		<Loader v-if="isLoading" />
 	
 		<div v-else>
-			<h1 v-if="!isNotFound">{{ store.name }}</h1>
+			<img v-if="!isNotFound && store.logo" :src="store.logo" :alt="store.name" class="brand-logo" />
+			<h1 v-if="!isNotFound && !store.logo">{{ store.name }}</h1>
 			<h3 v-if="!isNotFound && store.description">{{ store.description }}</h3>
 			
 			<TripadvisorReviewButton :link="store.tripadvisorLink" v-if="!isNotFound && store.tripadvisorLink" />
@@ -39,6 +40,7 @@ export default {
   data () {
 	return  {
 		store: {
+			logo: '',
 			name: '',
 			tripadvisorLink: '',
 			googlereviewLink: '',
@@ -60,6 +62,7 @@ export default {
 	}).then(({data: {records}}) => {
 		if (records.length > 0) {
 			this.store.name = records[0].fields['Name'];
+			this.store.logo = records[0].fields['Logo URL'];
 			this.store.tripadvisorLink = records[0].fields['Tripadvisor'];
 			this.store.googlereviewLink = records[0].fields['Google review'];
 			this.store.description = records[0].fields['Description'];
@@ -76,6 +79,19 @@ export default {
 </script>
 
 <style scoped>
+.brand-logo {
+	max-width: 80vh;
+	height: auto;
+}
+
+@media 
+  (-webkit-min-device-pixel-ratio: 2), 
+  (min-resolution: 192dpi) { 
+	.brand-logo {
+		max-width: 80%;
+	}
+}
+
 .review-button {
 	display: block;
 	margin: 50px auto;
