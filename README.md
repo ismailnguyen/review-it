@@ -30,7 +30,7 @@ http://goqr.me/#t=url
 
 ### Update datas
 
-- Airtable > Base `Trip.it` > Table `Stores`
+- Airtable > Base `Review.it` > Table `Stores`
 
 
 
