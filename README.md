@@ -38,3 +38,4 @@ http://goqr.me/#t=url
 
 - [bit.ly/namaste-rouen](https://bit.ly/namaste-rouen)
 - [bit.ly/namaste-rosny2](https://bit.ly/namaste-rosny2)
+- [bit.ly/indus-valley-restaurant](https://bit.ly/indus-valley-restaurant)
