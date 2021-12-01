@@ -22,11 +22,12 @@ npm run serve
 - Copy the restaurant id
 - Concatenate the id at the end of `https://search.google.com/local/writereview?placeid=`
 
-### Generate QR Code from URL
+### Generate QR Code
 
-```
-http://goqr.me/#t=url
-```
+Use any online QR code geneator to generate a beautiful QR code which will redirect user to Review.it page
+e.g.
+- [qrcode-monkey.com](https://www.qrcode-monkey.com)
+- [goqr.me](http://goqr.me)
 
 ### Update datas
 
