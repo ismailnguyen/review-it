@@ -12,8 +12,6 @@
 			<CustomButton :link="store.customLink" :text="store.customText" v-if="!isNotFound && store.customLink && store.customText" />
 			
 			<NotFound v-if="isNotFound" />
-			
-			<Footer />
 		</div>
 	</div>
 </template>
@@ -24,7 +22,6 @@ import GoogleReviewButton from '../components/GoogleReviewButton.vue'
 import TripadvisorReviewButton from '../components/TripadvisorReviewButton.vue'
 import CustomButton from '../components/CustomButton.vue'
 import NotFound from '../components/NotFound.vue'
-import Footer from '../components/Footer.vue'
 import axios from 'axios'
 
 export default {
@@ -34,8 +31,7 @@ export default {
 	GoogleReviewButton,
 	TripadvisorReviewButton,
 	CustomButton,
-	NotFound,
-	Footer
+	NotFound
   },
   data () {
 	return  {

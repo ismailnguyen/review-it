@@ -1,25 +1,34 @@
 <template>
-  <div id="app">
-	<router-view />
-  </div>
+	<div id="app">
+		<router-view />
+
+		<Footer />
+	</div>
 </template>
 
-<script>
 
+<script>
+import Footer from './components/Footer.vue'
+
+export default {
+  components: {
+	Footer
+  }
+}
 </script>
 
 <style>
-body {
-	background: #d6d3dd;
-}
+	body {
+		background: #d6d3dd;
+	}
 
-#app {
-	font-family: Avenir, Helvetica, Arial, sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-align: center;
-	color: #2c3e50;
-	margin-top: 50vh; /* poussé de la moitié de hauteur de viewport */
-	transform: translateY(-50%); /* tiré de la moitié de sa propre hauteur */
-}
+	#app {
+		font-family: Avenir, Helvetica, Arial, sans-serif;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		text-align: center;
+		color: #2c3e50;
+		margin-top: 50vh; /* poussé de la moitié de hauteur de viewport */
+		transform: translateY(-50%); /* tiré de la moitié de sa propre hauteur */
+	}
 </style>
