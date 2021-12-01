@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="container">
 		<Loader v-if="isLoading" />
 	
 		<div v-else>

@@ -28,7 +28,18 @@ export default {
 		-moz-osx-font-smoothing: grayscale;
 		text-align: center;
 		color: #2c3e50;
+	}
+
+	.container {
 		margin-top: 50vh; /* poussé de la moitié de hauteur de viewport */
 		transform: translateY(-50%); /* tiré de la moitié de sa propre hauteur */
+	}
+
+	footer {
+		position: fixed;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		padding: 1rem;
 	}
 </style>
