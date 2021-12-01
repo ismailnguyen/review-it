@@ -18,7 +18,7 @@ body {
     background: -o-linear-gradient(90deg,#e9e4f0,#d3cce3); /* Opera 11.10 */  
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e9e4f0', endColorstr='#d3cce3'); /* IE6 & IE7 */  
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#e9e4f0', endColorstr='#d3cce3')"; /* IE8+ */  
-    background: background: linear-gradient(90deg,#e9e4f0,#d3cce3); /* the standard */  
+    background: linear-gradient(90deg,#e9e4f0,#d3cce3); /* the standard */  
 }
 
 #app {
