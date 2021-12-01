@@ -11,7 +11,6 @@
 <style>
 body {
 	background: #d3cce3;
-    background: -webkit-gradient(linear,left top,right top,from(#e9e4f0),to(#d3cce3));
     background: linear-gradient(90deg,#e9e4f0,#d3cce3);
 }
 
