@@ -10,8 +10,7 @@
 
 <style>
 body {
-	background: #d3cce3c7;
-	
+	background: #d6d3dd;
 }
 
 #app {
